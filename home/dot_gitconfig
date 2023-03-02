@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Scott McCullough
+	email = mcculloughsco12@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = Scott McCullough
+#	email = smccullough@Scotts-MacBook-Pro-13.local
+[init]
+	defaultBranch = main
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = true
