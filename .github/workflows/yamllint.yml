@@ -1,0 +1,20 @@
+name: Yaml Linter
+on: # yamllint disable-line rule:truthy
+  push:
+    branches: main
+  pull_request:
+permissions: read-all
+jobs:
+  Yaml-Lint:
+    name: Run tests yaml lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install yaml lint
+        run: |
+          sudo apt-get install yamllint -y
+        shell: bash
+
+      - uses: actions/checkout@v3
+      - name: Checkout repo and run tests
+        run: |
+          yamllint -c .yamllint.conf .

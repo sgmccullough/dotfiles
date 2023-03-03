@@ -1,0 +1,32 @@
+
+name: Renovate
+on: # yamllint disable-line rule:truthy
+  schedule:
+    - cron: '0 12 * * *'
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/renovate*'
+      - '.github/workflows/renovate*'
+  workflow_dispatch:
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Token
+      id: generate_token
+      uses: tibdex/github-app-token@v1.8.0
+      with:
+        app_id: ${{ secrets.APP_ID }}
+        private_key: ${{ secrets.APP_PEM }}
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Self-hosted Renovate
+      uses: renovatebot/github-action@v34.154.1
+      with:
+        configurationFile: .github/renovate.json
+        token: 'x-access-token:${{ steps.generate_token.outputs.token }}'
+      env:
+        LOG_LEVEL: "debug"
+        RENOVATE_PLATFORM: github
