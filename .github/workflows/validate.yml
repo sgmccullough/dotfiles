@@ -1,0 +1,33 @@
+name: Test Install
+on:
+  push:
+    branches: main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron:  '0 12 * * *'
+  workflow_dispatch: {}
+jobs:
+  test-12:
+    runs-on: macos-12
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v3
+    - name: Install Chezmoi
+      run: ./install.sh
+    - name: bashrc
+      run: bash -c "source ~/.bashrc"
+    - name: zshrc
+      run: zsh -vc "source ~/.zshrc"
+   test-13:
+    runs-on: macos-13
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v3
+    - name: Install Chezmoi
+      run: ./install.sh
+    - name: bashrc
+      run: bash -c "source ~/.bashrc"
+    - name: zshrc
+      run: zsh -vc "source ~/.zshrc"
