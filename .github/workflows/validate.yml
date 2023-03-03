@@ -1,4 +1,4 @@
-name: Test Install
+name: Test Chezmoi Install
 on:
   push:
     branches: main
@@ -9,7 +9,7 @@ on:
     - cron:  '0 12 * * *'
   workflow_dispatch: {}
 jobs:
-  test-12:
+  instal-macos-12:
     runs-on: macos-12
     steps:
     - name: Checkout Source Code
@@ -20,8 +20,8 @@ jobs:
       run: bash -c "source ~/.bashrc"
     - name: zshrc
       run: zsh -vc "source ~/.zshrc"
-   test-13:
-    runs-on: macos-13
+  install-macos-latest:
+    runs-on: macos-latest
     steps:
     - name: Checkout Source Code
       uses: actions/checkout@v3
