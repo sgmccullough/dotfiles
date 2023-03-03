@@ -1,0 +1,21 @@
+{
+    "labels": [
+        "dependencies",
+        "maintenance",
+        "renovatebot"
+    ],
+    "branchPrefix": "renovate/",
+    "username": "renovate-automation[bot]",
+    "gitAuthor": "Renovate Automation <123456+renovate-automation[bot]@users.noreply.github.com>",
+    "platform": "github",
+    "includeForks": false,
+    "repositories": [
+        "sgmccullough/dotfiles"
+    ],
+    "prHourlyLimit": 20,
+    "dependencyDashboard": true,
+    "dependencyDashboardTitle": "Renovate Dashboard",
+    "assignees": [
+        "@sgmccullough"
+    ]
+}
