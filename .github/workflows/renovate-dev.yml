@@ -20,8 +20,8 @@ jobs:
       with:
         APP_PEM: ${{ secrets.APP_PEM }}
         APP_ID: ${{ secrets.APP_ID }}
-      - name: Checkout
-        uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
     - name: Generate Dry Run
       run: |
         jq '.dryRun = "true"' .github/renovate.json > .github/renovate.json.tmp
