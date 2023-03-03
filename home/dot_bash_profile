@@ -2,3 +2,23 @@
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
+
+export PATH=/usr/local/bin:$PATH
+
+function aws_switch_profile() {
+    aws_auth login $1
+    export AWS_PROFILE=$1
+}
+
+export PATH=$PATH:$HOME/Library/Python/2.7/bin
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/helm@2/bin:$PATH"
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+{{- if eq .email "scott.mccullough@sonos.com" }}
+source /Users/scott.mccullough/.ansible_container_profile
+export PATH=$PATH:/Users/scott.mccullough/terraform
+{{- end }}
