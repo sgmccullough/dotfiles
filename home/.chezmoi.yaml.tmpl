@@ -21,11 +21,11 @@
 {{-   $email = promptString "email" $email -}}
 {{- end -}}
 
-{{- $sso-start-url := "placeholder" -}}
-{{- if hasKey . "sso-start-url" -}}
-{{-   $sso-start-url = .sso-start-url -}}
+{{- $ssoStartUrl := "placeholder" -}}
+{{- if hasKey . "ssoStartUrl" -}}
+{{-   $ssoStartUrl = .ssoStartUrl -}}
 {{- else if $interactive -}}
-{{-   $sso-start-url = promptString "sso-start-url" -}}
+{{-   $ssoStartUrl = promptString "ssoStartUrl" -}}
 {{- end -}}
 
 {{- if $interactive -}}
