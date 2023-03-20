@@ -190,4 +190,6 @@ alias awsauthclear="unset AWS_SESSION_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_
 
 alias awsauthswitch="cat ~/.aws/config | grep '\[profile' | awk '{print $2}' | sed 's/[][]//g'"
 
+eval "$(op completion zsh)"; compdef _op op
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
