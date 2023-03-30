@@ -21,7 +21,7 @@
 {{-   $email = promptString "email" $email -}}
 {{- end -}}
 
-{{- $ssoStartUrl := "placeholder" -}}
+{{- $ssoStartUrl := "empty" -}}
 {{- if hasKey . "ssoStartUrl" -}}
 {{-   $ssoStartUrl = .ssoStartUrl -}}
 {{- else if $interactive -}}

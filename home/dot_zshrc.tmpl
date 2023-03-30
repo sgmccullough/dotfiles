@@ -132,7 +132,6 @@ export PATH=$PATH:$HOME/go/bin
 export PATH="/usr/local/opt/node/bin/:$PATH"
 
 source <(kubectl completion zsh)
-source <(k9s completion zsh)
 
 alias k=kubectl
 alias opa=~/./opa
@@ -190,6 +189,10 @@ alias awsauthclear="unset AWS_SESSION_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_
 
 alias awsauthswitch="cat ~/.aws/config | grep '\[profile' | awk '{print $2}' | sed 's/[][]//g'"
 
+{{ if .interactive -}}
 eval "$(op completion zsh)"; compdef _op op
+source <(k9s completion zsh)
+{{ end -}}
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
