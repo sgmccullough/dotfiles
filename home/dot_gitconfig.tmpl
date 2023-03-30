@@ -1,0 +1,26 @@
+{{- if eq .email "scott.mccullough@sonos.com" }}
+[credential]
+	helper = osxkeychain
+[user]
+	email = 39746213+scottmcculloughsonos@users.noreply.github.com
+	name = Scott McCullough
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+{{- else }}
+# This is Git's per-user configuration file.
+[user]
+	name = Scott McCullough
+	email = mcculloughsco12@gmail.com
+# Please adapt and uncomment the following lines:
+#	name = Scott McCullough
+#	email = smccullough@Scotts-MacBook-Pro-13.local
+[init]
+	defaultBranch = main
+[credential]
+	helper = osxkeychain
+[pull]
+	rebase = true
+{{- end }}
